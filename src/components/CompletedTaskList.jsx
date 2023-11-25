@@ -9,9 +9,6 @@ const CompletedTaskList = ({ tasks }) => {
               <li>Tarea realziada: {task.name}</li>
               <li>Día: {task.day}</li>
               <li>Hora: {task.time}</li>
-              <li>
-                {task.dateTime ? task.dateTime.toLocaleString() : "Sin fecha"}
-              </li>
             </ul>
           </span>
         </div>

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 
 const TaskItem = ({ task, handleComplete, handleDelete }) => {
-  const { name, completed, day, time } = task;
+  const { completed, name, day, time } = task;
 
   const toggleComplete = () => {
     handleComplete();
@@ -9,15 +8,17 @@ const TaskItem = ({ task, handleComplete, handleDelete }) => {
   };
 
   return (
-    <div>
-
-      <span>{task.name} - {task.day} - {task.time} - {task.dateTime ? task.dateTime.toLocaleString() : 'No hay fecha'}</span>
-
+    <section>
+      <ul>
+        <li>Tarea: {task.name}</li>
+        <li>Dia: {task.day ? task.day.toLocaleString() : "Sin fecha Asignada"} </li>
+        <li>Hora: {task.time ? task.time : "Sin hora asignada"}</li>
+      </ul>
       <button onClick={toggleComplete}>
         {completed ? 'Deshacer' : 'Completar'}
       </button>
       <button onClick={handleDelete}>Eliminar</button>
-    </div>
+    </section>
   );
 };
 
