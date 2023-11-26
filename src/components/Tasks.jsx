@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import CompletedTaskList from "./CompletedTaskList";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -14,7 +14,8 @@ const Tasks = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    const data = JSON.stringify(tasks);
+    window.localStorage.setItem("tasks", data);
   }, [tasks]);
 
   const addTask = (taskName, day, time) => {
@@ -35,7 +36,7 @@ const Tasks = () => {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+    });
   };
 
   const handleComplete = (taskId) => {
@@ -44,7 +45,10 @@ const Tasks = () => {
     );
     setTasks(updatedTasks);
     const completedTask = tasks.find((task) => task.id === taskId);
-    setCompletedTasks([...completedTasks, completedTask]);
+
+    if (completedTask) {
+      setCompletedTasks([...completedTasks, completedTask]);
+    }
   };
 
   const handleDelete = (taskId) => {
@@ -66,3 +70,4 @@ const Tasks = () => {
 };
 
 export default Tasks;
+

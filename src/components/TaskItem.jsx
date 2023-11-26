@@ -20,7 +20,7 @@ const TaskItem = ({ task, handleComplete, handleDelete }) => {
     <section>
       <ul>
         <li>Tarea: {task.name} </li>
-        <li>Dia: {task.day ? task.day.toLocaleString() : "Sin fecha Asignada"} </li>
+        <li>Dia: {task.day ? formatDate(task.day) : "Sin fecha Asignada"} </li>
         <li>Hora: {task.time ? task.time : "Sin hora asignada"}</li>
       </ul>
       <div class="btnContainer" >
