@@ -10,6 +10,7 @@ const Tasks = () => {
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    console.log("Tareas cargadas:", storedTasks);
     setTasks(storedTasks);
   }, []);
 

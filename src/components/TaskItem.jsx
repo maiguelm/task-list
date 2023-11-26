@@ -23,11 +23,11 @@ const TaskItem = ({ task, handleComplete, handleDelete }) => {
         <li>Dia: {task.day ? formatDate(task.day) : "Sin fecha Asignada"} </li>
         <li>Hora: {task.time ? task.time : "Sin hora asignada"}</li>
       </ul>
-      <div class="btnContainer" >
-      <button class="green" onClick={toggleComplete}>
+      <div className="btnContainer">
+      <button className="green" onClick={toggleComplete}>
         {completed ? 'Deshacer' : 'Completar'}
       </button>
-      <button class="red"  onClick={handleDelete}>Eliminar</button>
+      <button className="red" onClick={handleDelete}>Eliminar</button>
       </div>
     </section>
   );
