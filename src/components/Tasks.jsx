@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import CompletedTaskList from "./CompletedTaskList";
+import { toast } from 'react-toastify';
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -14,7 +15,6 @@ const Tasks = () => {
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    localStorage.setItem("taskName", JSON.stringify(taskName));
   }, [tasks]);
 
   const addTask = (taskName, day, time) => {
@@ -26,7 +26,16 @@ const Tasks = () => {
       completed: false,
     };
     setTasks([...tasks, newTask]);
-    alert("nueva tarea agregada");
+    toast.success("Nueva tarea agendada", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   };
 
   const handleComplete = (taskId) => {

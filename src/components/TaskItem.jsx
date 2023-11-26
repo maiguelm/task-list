@@ -1,13 +1,12 @@
-
 const TaskItem = ({ task, handleComplete, handleDelete }) => {
   const { completed, name, day, time } = task;
 
   const formatDate = (inputDate) => {
     const date = new Date(inputDate);
-    const argDate = date.toLocaleDateString('es-ES', {
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
+    const argDate = date.toLocaleDateString("es-ES", {
+      day: "numeric",
+      month: "numeric",
+      year: "numeric",
     });
     return argDate;
   };
@@ -24,13 +23,14 @@ const TaskItem = ({ task, handleComplete, handleDelete }) => {
         <li>Dia: {task.day ? formatDate(task.day) : "Sin fecha Asignada"} </li>
         <li>Hora: {task.time ? task.time : "Sin hora asignada"}</li>
       </ul>
-      <button onClick={toggleComplete}>
-        {completed ? 'Deshacer' : 'Completar'}
-      </button>
-      <button onClick={handleDelete}>Eliminar</button>
+      <div className="btnContainer">
+        <button onClick={toggleComplete}>
+          {completed ? "Deshacer" : "Completar"}
+        </button>
+        <button onClick={handleDelete}>Eliminar</button>
+      </div>
     </section>
   );
 };
 
-
-export default TaskItem
+export default TaskItem;
