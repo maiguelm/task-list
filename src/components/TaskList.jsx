@@ -4,7 +4,7 @@ import TaskItem from './TaskItem';
 const TaskList = ({ tasks, handleComplete, handleDelete }) => {
 	return (
 	  <div>
-		<h2>Lista de Tareas</h2>
+		<h2>Lista de Tareas <span class="count"> {tasks.length}</span> </h2>
 		{tasks.map(task => (
 		  <TaskItem
 			key={task.id}
