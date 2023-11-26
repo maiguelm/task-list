@@ -2,6 +2,16 @@
 const TaskItem = ({ task, handleComplete, handleDelete }) => {
   const { completed, name, day, time } = task;
 
+  const formatDate = (inputDate) => {
+    const date = new Date(inputDate);
+    const argDate = date.toLocaleDateString('es-ES', {
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+    });
+    return argDate;
+  };
+
   const toggleComplete = () => {
     handleComplete();
     handleDelete();
@@ -11,7 +21,7 @@ const TaskItem = ({ task, handleComplete, handleDelete }) => {
     <section>
       <ul>
         <li>Tarea: {task.name}</li>
-        <li>Dia: {task.day ? task.day.toLocaleString() : "Sin fecha Asignada"} </li>
+        <li>Dia: {task.day ? formatDate(task.day) : "Sin fecha Asignada"} </li>
         <li>Hora: {task.time ? task.time : "Sin hora asignada"}</li>
       </ul>
       <button onClick={toggleComplete}>

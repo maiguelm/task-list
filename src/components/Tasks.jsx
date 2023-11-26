@@ -8,12 +8,13 @@ const Tasks = () => {
   const [completedTasks, setCompletedTasks] = useState([]);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     setTasks(storedTasks);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("taskName", JSON.stringify(taskName));
   }, [tasks]);
 
   const addTask = (taskName, day, time) => {
@@ -25,18 +26,18 @@ const Tasks = () => {
       completed: false,
     };
     setTasks([...tasks, newTask]);
-	alert('nueva tarea agregada')
+    alert("nueva tarea agregada");
   };
 
-  const handleComplete = taskId => {
-    const updatedTasks = tasks.map(task =>
+  const handleComplete = (taskId) => {
+    const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, completed: !task.completed } : task
     );
     setTasks(updatedTasks);
-    const completedTask = tasks.find(task => task.id === taskId);
+    const completedTask = tasks.find((task) => task.id === taskId);
     setCompletedTasks([...completedTasks, completedTask]);
   };
-  
+
   const handleDelete = (taskId) => {
     const filteredTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(filteredTasks);
