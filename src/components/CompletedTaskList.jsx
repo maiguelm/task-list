@@ -1,9 +1,10 @@
+
 const CompletedTaskList = ({ tasks }) => {
   return (
     <div>
-      <h2>Tareas Realizadas: {tasks.length}</h2>
+      <h2>Tareas Realizadas <span class="count">{tasks.length} </span></h2>
       {tasks.map((task) => (
-        <div key={task.id}>
+        <div class="taskComplete" key={task.id}>
           <span>
             <ul>
               <li>Tarea realizada: {task.name}</li>

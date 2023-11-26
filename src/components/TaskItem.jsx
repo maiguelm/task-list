@@ -19,15 +19,15 @@ const TaskItem = ({ task, handleComplete, handleDelete }) => {
   return (
     <section>
       <ul>
-        <li>Tarea: {task.name}</li>
-        <li>Dia: {task.day ? formatDate(task.day) : "Sin fecha Asignada"} </li>
+        <li>Tarea: {task.name} </li>
+        <li>Dia: {task.day ? task.day.toLocaleString() : "Sin fecha Asignada"} </li>
         <li>Hora: {task.time ? task.time : "Sin hora asignada"}</li>
       </ul>
-      <div className="btnContainer">
-        <button onClick={toggleComplete}>
-          {completed ? "Deshacer" : "Completar"}
-        </button>
-        <button onClick={handleDelete}>Eliminar</button>
+      <div class="btnContainer" >
+      <button class="green" onClick={toggleComplete}>
+        {completed ? 'Deshacer' : 'Completar'}
+      </button>
+      <button class="red"  onClick={handleDelete}>Eliminar</button>
       </div>
     </section>
   );

@@ -17,22 +17,25 @@ const TaskForm = ({ addTask }) => {
   
 	return (
 	  <form onSubmit={handleSubmit}>
-		<label htmlFor="newTask">Nueva tarea</label>
+		<label for="newTask"  htmlFor="newTask">Nueva tarea</label>
 		<input
+		id="newTask"
 		  type="text"
 		  value={taskName}
 		  onChange={e => setTaskName(e.target.value)}
 		  placeholder="Nueva tarea"
 		/>
-		<label htmlFor="day">Dia:</label>
+		<label for="date" htmlFor="day">Día</label>
 		<input
+		id="date"
 		  type="date"
 		  value={taskDay}
 		  onChange={e => setTaskDay(e.target.value)}
 		  placeholder="Día"
 		/>
-		<label htmlFor="time">Hora:</label>
+		<label for="time" htmlFor="time">Hora</label>
 		<input
+		id="time"
 		  type="time"
 		  value={taskTime}
 		  onChange={e => setTaskTime(e.target.value)}
