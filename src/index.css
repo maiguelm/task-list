@@ -2,16 +2,95 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
+
+section:hover{
+  border: 1px solid #646cff ;
+}
+section {
+  transition: border-color 0.25s;
+  min-width: 60vw;
+  max-width: 80vw;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap:wrap ;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #0e0d0d;
+  box-shadow: 0px 6px 11px 5px rgba(0, 0, 0, 0.25);
+  background: rgba(240, 238, 236, 0.685);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px 10px;
+  gap:0px;
+}
+section li{
+  font-size:smaller;
+}
+.btnContainer {
+  font-size: 0.8em;
+  margin-right: 15px;
+  margin-left: 5%;
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+form{
+  min-width: 60vw;
+  max-width: 80vw;
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 0.5rem;
+    align-items: center;
+    
+  color: #f9f9f9;
+  box-shadow: 0px 6px 11px 5px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0 1px 3px rgb(157, 243, 243); */
+  background: rgb(37, 35, 35, 0.8);
+  border-radius: 8px;
+  text-align:center ;
+  padding: 20px 10px;
+}
+input{
+  color: rgb(33, 33, 33);
+  font-size: 1.2rem;
+  width: 90%;
+  height: 40px;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 1vh;
+  border-radius: 8px;
+  border: none;
+  padding: 0px 10px 0px 10px;
+  cursor: pointer;
+}
+
+label{
+  font-size: 1.5rem;
+  
+}
+
+
 
 a {
   font-weight: 500;
@@ -23,11 +102,23 @@ a:hover {
 }
 
 body {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
+    padding: 5vh 3vw;
+  /* background:rgb(4, 146, 146); */
+  background-image: linear-gradient(rgba(241, 241, 241, 0.288),rgba(241, 241, 241, 0.384),rgba(241, 241, 241, 0.205)),url(https://retos-directivos.eae.es/wp-content/uploads/2019/01/iStock-924555992.jpg);
+  
+  /* background-image: linear-gradient(rgba(241, 241, 241, 0.137),rgba(241, 241, 241, 0.137)),url(https://i.pinimg.com/564x/17/63/df/1763dfaac59f0f70cb9e9cdd1ebd8d0c.jpg ); */
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size:cover;
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* min-width: 320px; */
+  min-height: 90vh;
 }
 
 h1 {
@@ -36,6 +127,9 @@ h1 {
 }
 
 button {
+  box-shadow: 0px 3px 9px 3px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  color: #d11616;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -45,6 +139,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+
 }
 button:hover {
   border-color: #646cff;
