@@ -16,12 +16,25 @@ const Tasks = () => {
     } else {
       setTasks([]);
     }
+
+    const storeComplete = JSON.parse(localStorage.getItem("completedTasks"));
+    console.log("Tareas completadas cargadas:", storeComplete);
+    if (storeComplete) {
+      setCompletedTasks(storeComplete);
+    } else {
+      setCompletedTasks([]);
+    }
   }, []);
 
+
   useEffect(() => {
-    const data = JSON.stringify(tasks);
-    window.localStorage.setItem("tasks", data);
+    // const data = JSON.stringify(tasks);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  useEffect(() => {
+    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+  }, [completedTasks]);
 
   const addTask = (taskName, day, time) => {
     const newTask = {
@@ -52,6 +65,8 @@ const Tasks = () => {
     const completedTask = tasks.find((task) => task.id === taskId);
 
     if (completedTask) {
+      const storageComplete = JSON.stringify(completedTask);
+
       setCompletedTasks([...completedTasks, completedTask]);
     }
   };
