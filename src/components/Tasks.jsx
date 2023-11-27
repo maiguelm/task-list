@@ -9,9 +9,13 @@ const Tasks = () => {
   const [completedTasks, setCompletedTasks] = useState([]);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
     console.log("Tareas cargadas:", storedTasks);
-    setTasks(storedTasks);
+    if (storedTasks) {
+      setTasks(storedTasks);
+    } else {
+      setTasks([]);
+    }
   }, []);
 
   useEffect(() => {
@@ -71,4 +75,3 @@ const Tasks = () => {
 };
 
 export default Tasks;
-
