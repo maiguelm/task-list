@@ -73,7 +73,25 @@ section li{
     gap: 10px;
     padding-bottom: 20px;
 }
-
+.taskComplete{
+  animation-name: de-izquierda-a-derecha;
+  animation-duration: 1000ms;
+  transition: border-color 0.25s;
+  min-width: 60vw;
+  max-width: 80vw;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap:wrap ;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #0e0d0d;
+  box-shadow: 0px 6px 11px 5px rgba(0, 0, 0, 0.25);
+  background: rgba(240, 238, 236, 0.685);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size:smaller;
+}
 form{
   min-width: 60vw;
   max-width: 80vw;
