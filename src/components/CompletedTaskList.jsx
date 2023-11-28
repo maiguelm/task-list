@@ -1,19 +1,16 @@
-import TaskItem from "./TaskItem";
-
 const CompletedTaskList = ({ tasks }) => {
   return (
     <div>
       <h2>
         Tareas Realizadas <span className="count">{tasks.length} </span>
       </h2>
-      {tasks.map((task) => (<div class="taskComplete" key={task.id}>
-          <span>
+      {tasks.map((task) => (
+        <div className="taskComplete" key={task.id}>
             <ul>
-              <li>Tarea realziada: {task.name}</li>
+              <li>Tarea realizada: {task.name}</li>
               <li>Día: {task.day}</li>
               <li>Hora: {task.time}</li>
             </ul>
-          </span>
         </div>
       ))}
     </div>

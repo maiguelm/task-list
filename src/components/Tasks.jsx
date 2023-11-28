@@ -1,34 +1,33 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import CompletedTaskList from "./CompletedTaskList";
 import { toast } from "react-toastify";
 
+const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+const storeComplete = JSON.parse(localStorage.getItem("completedTasks"));
+
 const Tasks = () => {
-  const [tasks, setTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
+  const [tasks, setTasks] = useState(storedTasks ?? []);
+  const [completedTasks, setCompletedTasks] = useState(storeComplete ?? []);
+  
+  
+  // useEffect(() => {
+  //   if (storedTasks) {
+  //     setTasks(storedTasks);
+  //   } else {
+  //     setTasks([]);
+  //   }
 
-  useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log("Tareas cargadas:", storedTasks);
-    if (storedTasks) {
-      setTasks(storedTasks);
-    } else {
-      setTasks([]);
-    }
-
-    const storeComplete = JSON.parse(localStorage.getItem("completedTasks"));
-    console.log("Tareas completadas cargadas:", storeComplete);
-    if (storeComplete) {
-      setCompletedTasks(storeComplete);
-    } else {
-      setCompletedTasks([]);
-    }
-  }, []);
+  //   if (storeComplete) {
+  //     setCompletedTasks(storeComplete);
+  //   } else {
+  //     setCompletedTasks([]);
+  //   }
+  // }, []);
 
 
   useEffect(() => {
-    // const data = JSON.stringify(tasks);
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 

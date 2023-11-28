@@ -24,10 +24,12 @@ const TaskItem = ({ task, handleComplete, handleDelete }) => {
         <li>Hora: {task.time ? task.time : "Sin hora asignada"}</li>
       </ul>
       <div className="btnContainer">
-      <button className="green" onClick={toggleComplete}>
-        {completed ? 'Deshacer' : 'Completar'}
-      </button>
-      <button className="red" onClick={handleDelete}>Eliminar</button>
+        <button className="green" onClick={toggleComplete}>
+          {completed ? "Deshacer" : "Completar"}
+        </button>
+        <button className="red" onClick={handleDelete}>
+          Eliminar
+        </button>
       </div>
     </section>
   );
